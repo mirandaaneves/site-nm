@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechSolutions - Soluções Tecnológicas</title>
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <header>
+    <div class="container">
+      <h1>TechSolutions</h1>
+      <p>Soluções Tecnológicas para Empresas</p>
+      <a href="#contato" class="btn btn-light">Entre em Contato</a>
+    </div>
+  </header>
+
+  
+  <section id="identidade">
+    <div class="container">
+      <h2>Identidade Visual</h2>
+      <p>A TechSolutions é uma empresa focada em tecnologia, com um design moderno e funcional. Nossa identidade visual é baseada em simplicidade e inovação, sempre priorizando a usabilidade e experiência do usuário.</p>
+      <img src="logo_tecngia-removebg-preview.png" alt="Logo TechSolutions" style="max-width: 300px; margin-top: 1.5rem;">
+    </div>
+  </section>
+
+  
+  <section id="produtos-servicos">
+    <div class="container">
+      <h2>Produtos e Serviços</h2>
+      <p>Oferecemos uma gama de produtos e serviços tecnológicos de alta qualidade para empresas de todos os tamanhos:</p>
+
+      
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card">
+            <h3 class="card-header">Automação Empresarial</h3>
+            <div class="card-body">
+              <p>Automatizamos processos empresariais, aumentando a eficiência e reduzindo erros operacionais.</p>
+              <a href="#" class="btn btn-primary">Saiba Mais</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card">
+            <h3 class="card-header">Segurança Digital</h3>
+            <div class="card-body">
+              <p>Desenvolvemos soluções de segurança digital para proteger sua empresa contra ameaças cibernéticas.</p>
+              <a href="#" class="btn btn-primary">Saiba Mais</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card">
+            <h3 class="card-header">Desenvolvimento Personalizado</h3>
+            <div class="card-body">
+              <p>Desenvolvemos softwares personalizados para atender às necessidades específicas do seu negócio.</p>
+              <a href="#" class="btn btn-primary">Saiba Mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="caracteristicas">
+    <div class="container">
+      <h2>Características</h2>
+      <ul>
+        <li><strong>Inovação</strong>: Sempre buscando as soluções mais inovadoras e eficientes para seus desafios.</li>
+        <li><strong>Segurança</strong>: Garantimos a proteção de dados e informações sensíveis da sua empresa.</li>
+        <li><strong>Suporte 24/7</strong>: Atendimento contínuo, garantindo que sua empresa nunca pare.</li>
+      </ul>
+    </div>
+  </section>
+
+  
+  <section id="diferenciais">
+    <div class="container">
+      <h2>Diferenciais</h2>
+      <p>O que nos torna únicos:</p>
+      <ul>
+        <li><strong>Equipe Qualificada:</strong> Profissionais especializados e com experiência em diversas áreas da tecnologia.</li>
+        <li><strong>Customização:</strong> Soluções adaptadas às necessidades específicas de cada cliente.</li>
+        <li><strong>Atendimento Pessoal:</strong> Acompanhamento próximo para garantir resultados satisfatórios.</li>
+      </ul>
+    </div>
+  </section>
+
+  
+  <section id="contato" class="contato">
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <p>Preencha o formulário abaixo e nossa equipe entrará em contato com você!</p>
+
+     
+      <form id="contactForm" onsubmit="EnvioEmail(event)">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem</label>
+          <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  
+  <footer>
+    <p>&copy; 2025 TechSolutions. Todos os direitos reservados.</p>
+  </footer>
+
+  
+  <a href="#contato" class="floating-btn contact-btn btn btn-success">Contate-nos</a>
+  <script>
+        async function EnvioEmail(event){
+      event.preventDefault();  
+
+      const form = document.getElementById("contactForm");
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/ednmirand@gmail.com", {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: formData
+        });
+
+        if (response.ok) {
+          alert("Mensagem enviada com sucesso!");
+          form.reset(); 
+        } else {
+          alert("Erro ao enviar. Tente novamente.");
+        }
+      } catch (error) {
+        alert("Erro na conexão. Verifique sua internet.");
+      }
+    }
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
